@@ -1,5 +1,8 @@
 # 🌱 Noor Sprouts – Landing Page
 
+<img width="1897" height="672" alt="image" src="https://github.com/user-attachments/assets/d7ae9056-d261-4a9d-b972-d464cc57ebe3" />
+
+
 A colorful and kid-friendly landing page for **Noor Sprouts**, an educational platform that helps children learn Quran, Arabic, and Islamic values in a fun and engaging way.
 
 ---
