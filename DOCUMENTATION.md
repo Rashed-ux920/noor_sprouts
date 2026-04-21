@@ -1,111 +1,149 @@
-# Noor Sprouts Website Documentation
+# Noor Sprouts SPA Documentation
 
 ## Overview
-This project is a modern, responsive landing page for **Noor Sprouts**, a kids educational platform focused on fun Islamic learning.
+This project is a modern, colorful, kid-friendly Single Page Application (SPA) landing page for **Noor Sprouts**, built for a children's educational platform.
 
-The website is built with:
-- `HTML` for structure
-- `CSS` for styling and responsive layout
-- `JavaScript` for small interactive effects (scroll reveal animation)
+The application is built with:
+- `HTML5` for semantic structure
+- `CSS3` (no frameworks) for visual design and responsive layout
+- `Vanilla JavaScript` for SPA navigation and interactivity
+
+No external libraries or build tools are used.
 
 ## Project Files
-- `index.html` - Main page structure and all website sections
-- `style.css` - All styling, colors, layout, spacing, responsiveness, hover states
-- `script.js` - Scroll reveal animation logic
-- `logo.png` - Brand logo used in navbar, hero, and footer
+- `index.html` - Contains all SPA sections and semantic page structure
+- `styles.css` - Full design system, layout, responsiveness, animations, and components
+- `script.js` - SPA section switching, active nav states, mobile menu logic, form validation
+- `logo.png` - Brand/logo image used in navigation, hero, and footer
 
-## Website Sections
-The landing page includes:
-1. **Navbar**
-   - Brand logo and name
-   - "Get Started" button
-2. **Hero Section**
-   - Centered logo
-   - Main headline: `Learn, Grow & Shine 🌟`
-   - Subtitle and CTA button
-3. **Features Section**
-   - Quran Learning
-   - Arabic Basics
-   - Fun Activities
-4. **About Section**
-   - Short platform description for parents
-5. **Testimonials Section**
-   - Parent feedback cards
-6. **Call-To-Action Section**
-   - Encourages user sign-up with `Join Now` button
-7. **Footer**
-   - Brand
-   - Quick links
-   - Social links
+## SPA Sections
+All sections live in one HTML file and are toggled through JavaScript (no page reload):
+
+1. `#home` (default visible)
+2. `#about`
+3. `#courses`
+4. `#blog`
+5. `#contact`
+
+The class `.app-section.active` controls which section is currently displayed.
+
+## Navigation Behavior
+The navbar includes:
+- Logo (`/logo.png`)
+- Links: Home, About, Courses, Blog, Contact
+- CTA button: `Get Started`
+- Mobile hamburger toggle
+
+When a nav item is clicked:
+- The correct section is shown using JS
+- Other sections are hidden
+- The active nav link is highlighted
+- URL hash updates without reloading
+- View scrolls smoothly to the top of the active section
+
+## Home Section Content
+The Home area contains:
+- Hero block with logo, title, subtitle, and `Start Learning` CTA
+- Features cards:
+  - Quran Learning
+  - Arabic Basics
+  - Fun Activities
+- About preview with `Learn More`
+- Testimonials cards
+- Final CTA block with `Join Now`
+
+## About Section
+Includes mission, vision, and parent-focused explanation of platform goals and values.
+
+## Courses Section
+Displays a responsive course card grid with:
+- Image placeholder
+- Title
+- Description
+- Action button
+
+## Blog Section
+Displays blog preview cards with:
+- Image placeholder
+- Title
+- Short excerpt
+- `Read More` button
+
+## Contact Section
+Includes a contact form with:
+- Name
+- Email
+- Message
+
+Validation is handled in `script.js`:
+- Name must be at least 2 characters
+- Email must match a valid email pattern
+- Message must be at least 10 characters
+
+If valid, a success message is shown and the form resets.
 
 ## Design System
-The UI style is playful and child-friendly with:
-- Bright soft colors (`yellow`, `green`, `blue`, `white`)
-- Rounded corners
-- Soft shadows
-- Smooth hover and reveal transitions
-- Mobile-first responsive layout
+The design uses CSS variables in `:root` (inside `styles.css`) for color, spacing, radius, and shadows.
 
-Main color variables are defined in `style.css` under:
-- `--yellow`
-- `--green`
-- `--blue`
-- `--white`
-- `--ink`
-- `--muted`
-- `--bg`
+Primary visual style:
+- Soft bright palette (yellow, green, blue, white)
+- Rounded corners and soft card shadows
+- Smooth button/card hover transitions
+- Playful but clean modern layout
+- Mobile-first responsive behavior
 
-## How to Run the Website
-1. Keep all project files in the same folder.
-2. Open `index.html` in any browser.
+## Animations
+Implemented animations include:
+- Section fade transition when switching SPA sections
+- Fade-in reveal on visible content elements
+- Interactive hover feedback for cards, links, and buttons
 
-No build tools or dependencies are required.
+Reveal effects use `IntersectionObserver` on `.fade-in` elements.
+
+## Responsive Behavior
+Layout is mobile-first and scales up with media queries:
+- `min-width: 760px`:
+  - Desktop nav replaces hamburger menu
+  - Grids expand to multi-column layouts
+- `min-width: 1024px`:
+  - Courses and blog sections use wider multi-column grids
+
+## Accessibility Notes
+Current accessibility-friendly features include:
+- Semantic tags (`header`, `main`, `section`, `nav`, `footer`, `form`)
+- `alt` text for images
+- `aria-label` and `aria-controls` for navigation controls
+- `aria-live` for form success feedback
+- Keyboard-focus compatible controls
+
+## How to Run
+1. Keep all files in the same project folder.
+2. Open `index.html` in any modern browser.
+
+No installation, npm packages, or server setup is required.
 
 ## Customization Guide
 
-### 1) Change Logo
-- Replace `logo.png` with your new file (same name), or
-- Update image paths in `index.html` where `src="logo.png"` appears.
+### Update Text
+Edit content directly in `index.html` for headings, descriptions, testimonials, cards, and button labels.
 
-### 2) Change Text Content
-- Open `index.html`
-- Edit headings, paragraphs, button labels, testimonial text as needed
+### Update Theme Colors
+Edit CSS variables in `styles.css` under `:root`.
 
-### 3) Change Colors
-- Open `style.css`
-- Update the color values in `:root`
+### Add New SPA Section
+1. Add a new `<section id="new-id" class="app-section" data-section>...</section>` in `index.html`
+2. Add matching nav items with `data-nav="new-id"`
+3. Add `"new-id"` to the `sectionIds` array in `script.js`
 
-### 4) Add / Remove Feature Cards
-- In `index.html`, locate the Features section (`feature-grid`)
-- Duplicate or remove a `<article class="card feature-card reveal"> ... </article>`
+### Update Form Rules
+Adjust checks in `validateContactForm()` inside `script.js`.
 
-### 5) Update Links
-- In footer and navbar buttons, replace `href="#"` with real URLs/pages.
-
-## Responsive Behavior
-- The layout is optimized for mobile screens first.
-- At wider screens (`min-width: 700px`), feature and testimonial cards switch to multi-column grid layout.
-
-## Accessibility Notes
-The page includes:
-- Semantic HTML sections (`header`, `main`, `section`, `footer`, `nav`)
-- `alt` text for logo images
-- `aria-label` attributes for better screen reader support
-- Focus styles for buttons
-
-## JavaScript Behavior
-`script.js` uses `IntersectionObserver` to animate elements with class `.reveal` when they enter the viewport.
-
-If you want to disable reveal animations:
-- Remove `reveal` classes from `index.html`, or
-- Remove/comment the code in `script.js`.
-
-## Suggested Next Improvements
-- Add real destination links for navbar/footer actions
-- Connect CTA buttons to signup page
-- Add a contact form section
-- Add SEO meta tags (description, Open Graph)
-- Optimize `logo.png` size for faster loading
+## Future Enhancements
+- Replace placeholder blocks with real course/blog images
+- Connect buttons to real backend or enrollment flow
+- Persist last visited section in local storage
+- Add multilingual support (e.g., English/Arabic toggle)
+- Add SEO metadata and social sharing tags
 
 ## License
-This documentation is provided for project use and customization.
+This documentation is for project usage, maintenance, and customization.
