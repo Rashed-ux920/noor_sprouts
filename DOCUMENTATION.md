@@ -14,6 +14,7 @@ No external libraries or build tools are used.
 - `index.html` - Contains all SPA sections and semantic page structure
 - `styles.css` - Full design system, layout, responsiveness, animations, and components
 - `script.js` - SPA section switching, active nav states, mobile menu logic, form validation
+- `regestration.html` - this page ment to be for login and signin form
 - `logo.png` - Brand/logo image used in navigation, hero, and footer
 
 ## SPA Sections
@@ -31,7 +32,7 @@ The class `.app-section.active` controls which section is currently displayed.
 The navbar includes:
 - Logo (`/logo.png`)
 - Links: Home, About, Courses, Blog, Contact
-- CTA button: `Get Started`
+- CTA regestration link: `Get Started`
 - Mobile hamburger toggle
 
 When a nav item is clicked:
@@ -92,6 +93,9 @@ Primary visual style:
 - Playful but clean modern layout
 - Mobile-first responsive behavior
 
+## Icon library
+- Font Awesome
+
 ## Animations
 Implemented animations include:
 - Section fade transition when switching SPA sections
@@ -145,5 +149,6 @@ Adjust checks in `validateContactForm()` inside `script.js`.
 - Add multilingual support (e.g., English/Arabic toggle)
 - Add SEO metadata and social sharing tags
 
+###Note: to make the photos work just add `/noor_sprouts` before any of the src 
 ## License
 This documentation is for project usage, maintenance, and customization.

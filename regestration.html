@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Noor Sprouts | Kids Learning Platform</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/reg-style.css" />
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- Website Icon -->
+    <link rel="icon" href="logo.png" type="image/png" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="container nav-shell">
+
+            <!-- BRAND -->
+            <a class="brand" href="index.html" aria-label="Noor Sprouts Home">
+                <img
+                    src="logo.png"
+                    alt="Noor Sprouts Logo"
+                    class="brand-logo"
+                    loading="lazy"
+                />
+                <span>Noor Sprouts</span>
+            </a>
+
+            <!-- SUB NAV -->
+            <div class="sub-nav" aria-label="Authentication Navigation">
+                <a href="#login" class="reg-link" data-nav="login">
+                    Login
+                </a>
+
+                <a href="#signup" class="reg-link" data-nav="signup">
+                    Signup
+                </a>
+            </div>
+
+        </div>
+
+        <!-- BACK BUTTON -->
+        <button
+            type="button"
+            onclick="window.location.href='index.html'"
+            class="back-btn"
+            id="back-btn"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+            Go Back
+        </button>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <section class="login-section">
+
+            <!-- LOGO -->
+            <img
+                src="logo.png"
+                alt="Noor Sprouts Logo"
+                width="80"
+            />
+
+            <!-- TITLE -->
+            <h1>
+                Welcome Back
+                <small>Login to your account</small>
+            </h1>
+
+            <!-- LOGIN FORM -->
+            <form
+                action="/login"
+                method="post"
+                class="login-form"
+            >
+
+                <!-- EMAIL -->
+                <label for="email">
+
+                    <div class="container-1">
+                        <small>Email</small>
+                        <span id="email-error" class="error"></span>
+                    </div>
+
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        aria-label="Email Address"
+                        autocomplete="email"
+                        placeholder="Your email"
+                        required
+                    />
+
+                </label>
+
+                <!-- PASSWORD -->
+                <label for="password">
+
+                    <div class="container-1">
+                        <small>Password</small>
+                        <span id="password-error" class="error"></span>
+                    </div>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        aria-label="Password"
+                        autocomplete="current-password"
+                        placeholder="Your password"
+                        required
+                    />
+
+                </label>
+
+                <!-- SUBMIT BUTTON -->
+                <button
+                    type="submit"
+                    class="btn btn-accent nav-cta"
+                >
+                    Login
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-shell">
+
+            <!-- FOOTER BRAND -->
+            <div class="footer-brand">
+
+                <img
+                    src="logo.png"
+                    alt="Noor Sprouts Logo"
+                    class="brand-logo"
+                    loading="lazy"
+                />
+
+                <strong>Noor Sprouts</strong>
+
+            </div>
+
+            <!-- FOOTER LINKS -->
+            <nav class="footer-links" aria-label="Footer Links">
+
+                <a href="#home" data-nav="home">Home</a>
+
+                <a href="#courses" data-nav="courses">Courses</a>
+
+                <a href="#blog" data-nav="blog">Blog</a>
+
+                <a href="#contact" data-nav="contact">Contact</a>
+
+            </nav>
+
+            <!-- SOCIAL LINKS -->
+            <div class="social-links" aria-label="Social Media">
+
+                <a href="#" aria-label="Instagram">
+                    Instagram
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    Facebook
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/reg.js"></script>
+
+</body>
+</html>
